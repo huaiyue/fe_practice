@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+    function Box(){        //大写，代表构造函数
+        Box.prototype.name = "trigkit4";//原型属性
+        Box.prototype.age = "21";
+        Box.prototype.run = function()//原型方法
+        {  
+            return this.name + this.age + 'studying';
+        }
+    }
+    
+    var box1 = new Box();
+    alert(box1.name);//trigkit4,原型里的值
+    box1.name = "Lee";
+    alert(box1.name);//Lee,就进原则
+    
+    var box2 = new Box();
+    alert(box2.name);//trigkit4,原型的值，没有被box1修改
+</script>
+
+</html>

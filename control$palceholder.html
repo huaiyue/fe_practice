@@ -1,0 +1,32 @@
+<!--control:在标签内部放置一个表单元素，通过该标签的control属性访问该表单元素-->
+
+<!--文本框的placeholder属性：当文本框出于未输入状态时显示的输入提示。当文本框处于未输入状态且为获取光标焦点时，模糊显示输入提示文字-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>control</title>
+</head>
+<body>
+	<script >
+		function setValue(){
+			var label = document.getElementById("label");
+			var textbox = label.control;
+			textbox.value = "123456";
+		} 
+	</script>
+	<form>
+		<label id="label">
+			邮编：
+			<input id="txt_zip" maxlength="6">
+			<small>请输入六位数字</small>
+		</label>
+		<input type="button" value="设置默认值" onclick="setValue()">
+	</form>
+	<br>
+	</br>
+
+	<input type="text" placeholder = "请输入用户名">
+</body>
+</html>

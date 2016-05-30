@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页编排</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">首页test</a></li>
+			<li><a href="#">内容1test</a></li>
+			<li><a href="#">内容2test</a></li>
+		</ul>
+	</nav>
+	<header>
+		<nav>
+			<ul>
+				<a href="#">首页</a>
+				<a href="#">内容1</a>
+				<a href="#">内容2</a>
+			</ul>
+		</nav>
+	</header>
+
+	<article>
+
+		<hgroup>
+			<h1>文章主标题</h1>
+			<h2>文章子标题</h2>
+		</hgroup>
+		<p>文章内容</p>
+		<section>
+			<div>
+				<article>
+					<h1>评论标题</h1>
+					<p>评论正文</p>
+				</article>
+			</div>
+		</section>
+	</article>
+
+	<footer>
+		<small>版权所有：xxx</small>
+	</footer>
+
+	<form id = "123">
+		<input type="text">
+	</form>
+	<textarea form = "123" ></textarea>
+
+
+<!--required="required"  表示文本框必须填写才会跳转-->
+	<form action="http://ww.baidu.com">
+		<input type="text" required="required">   
+		<button type="submit">提交</button>
+	</form>
+
+
+<!--lables属性应用-->
+	<script >
+		function Validate(){
+			var txtName = document.getElementById("txt_name");
+			var button = document.getElementById("btnValidate");
+			var form = document.getElementById("testform");
+			if(txtName.value.trim()==""){
+				var label = document.createElement("label");
+				label.setAttribute("for","txt_name");
+				form.insertBefore(label,button);
+				txtName.label[1].innerHTML = "请输入姓名"；
+				txtName.label[1].setAttribute("style","font-size;9px;color:red");
+			}
+		}
+	</script>
+	<form id="testform">
+		<label id="lable" for="txt_name">姓名：</label>
+		<input id="txt_name">
+		<input type="button" id="btnValidate" value="验证" onclick="Validate()">
+		
+	</form>
+
+	<form>
+		<label id="label">
+			邮编：
+			<input id = "txt_zip"  maxlength="6">
+			<small>请输入六位数字</small>
+		</label>
+		<input type="button" value="设置默认值">
+	</form>
+	<br>
+
+	<form>
+		<input type="text" placeholder="请输入用户名">
+	</form>
+
+
+<!--list属性-->
+	<br>
+	<br>
+	<form>
+		<input type="txt"  name="greeting"   list = "greetings"  maxlength="10">
+		<datalist id = "greetings" style = "display:none">
+			<option value="HTML5学习">HTML5学习</option>
+			<option value="andriod学习">andr学习</option>
+			<option value="ios">ios学习</option>
+		</datalist>
+	</form>
+<!--partter属性-->
+	<br>
+	<form action="http://www.badu.com">
+		<input pattern = "[A-Z]{3}" neme = "part">
+		<input type="submit">
+	</form>
+
+
+
+
+</body>
+</html>
